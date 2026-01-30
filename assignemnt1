@@ -1,0 +1,313 @@
+1)Programs on if, if else, nested if, switch, looping conditions, for loop example (date)… complete object.
+
+* if statement
+// 1. Check if a number is positive
+let num1 = 5;
+if (num1 > 0) {
+    console.log("1) Number is positive");
+}
+
+// 2. Check if a number is even
+let num2 = 8;
+if (num2 % 2 === 0) {
+    console.log("2) Number is even");
+}
+
+// 3. Check voting eligibility
+let age = 20;
+if (age >= 18) {
+    console.log("3) Eligible to vote");
+}
+
+// 4. Check if a number is divisible by 5
+let num3 = 25;
+if (num3 % 5 === 0) {
+    console.log("4) Divisible by 5");
+}
+
+// 5. Check pass or fail
+let marks = 45;
+if (marks >= 40) {
+    console.log("5) Pass");
+}
+
+// 6. Check if character is uppercase
+let ch = 'A';
+if (ch >= 'A' && ch <= 'Z') {
+    console.log("6) Uppercase letter");
+}
+
+// 7. Check leap year (basic)
+let year = 2024;
+if (year % 4 === 0) {
+    console.log("7) Leap year");
+}
+
+*if else
+// 1. Check if a number is positive
+let num1 = 5;
+if (num1 > 0) {
+    console.log("1) Number is positive");
+}
+
+// 2. Check if a number is even
+let num2 = 8;
+if (num2 % 2 === 0) {
+    console.log("2) Number is even");}
+
+// 3. Check voting eligibility
+let age = 20;
+if (age >= 18) {
+    console.log("3) Eligible to vote");
+}
+
+// 4. Check if a number is divisible by 5
+let num3 = 25;
+if (num3 % 5 === 0) {
+    console.log("4) Divisible by 5");
+}
+
+// 5. Check pass or fail
+let marks = 45;
+if (marks >= 40) {
+    console.log("5) Pass");
+}
+
+// 6. Check if character is uppercase
+let ch = 'A';
+if (ch >= 'A' && ch <= 'Z') {
+    console.log("6) Uppercase letter");
+}
+
+// 7. Check leap year (basic)
+let year = 2024;
+if (year % 4 === 0) {
+    console.log("7) Leap year");}
+*Switch
+//1. Day of the Week
+let day = 3;
+switch (day) {
+  case 1: console.log("Monday");
+   break;
+  case 2: console.log("Tuesday");
+   break;
+  case 3: console.log("Wednesday");
+   break;
+  case 4: console.log("Thursday"); 
+  break;
+  case 5: console.log("Friday");
+   break;
+  case 6: console.log("Saturday");
+   break;
+  case 7: console.log("Sunday");
+   break;
+  default: console.log("Invalid day");
+  }
+
+//2. Simple Calculator
+let a = 10, b = 5;
+let operator = "+";
+switch (operator) {
+  case "+": console.log(a + b);
+   break;
+  case "-": console.log(a - b);
+   break;
+  case "*": console.log(a * b);
+   break;
+  case "/": console.log(a / b);
+   break;
+  default: console.log("Invalid operator");
+}
+
+//3. Check Vowel
+let ch = "a";
+switch (ch) {
+  case "a": case "e": case "i": case "o": case "u":
+    console.log("Vowel");
+    break;
+  default:
+    console.log("Consonant");
+}
+
+// 5. Grade System
+let grade = "A";
+switch (grade) {
+  case "A": console.log("Excellent");
+   break;
+  case "B": console.log("Very Good");
+   break;
+  case "C": console.log("Good");
+   break;
+  case "D": console.log("Pass");
+   break;
+  default: console.log("Fail");}
+//4. Month Name
+let month = 4;
+switch (month) {
+  case 1: console.log("January");
+   break;
+  case 2: console.log("February");
+   break;
+  case 3: console.log("March");
+   break;
+  case 4: console.log("April");
+   break;
+  case 5: console.log("May");
+   break;
+  default: console.log("Invalid month");
+}
+
+ // 6. Traffic Light
+let signal = "red";
+switch (signal) {
+  case "red": console.log("Stop");
+   break;
+  case "yellow": console.log("Get Ready");
+   break;
+  case "green": console.log("Go");
+   break;
+  default: console.log("Invalid signal");
+}
+
+
+// 7. Even or Odd
+let num = 7;
+switch (num % 2) {
+  case 0: console.log("Even number");
+   break;
+  case 1: console.log("Odd number");
+   break;
+}
+
+*Loop statememnts:
+While:
+// 1. Print numbers from 1 to 10
+console.log("1. Numbers from 1 to 10:");
+let i = 5;
+while (i <= 10) {
+    console.log(i);
+    i++;
+}
+
+// 2. Print even numbers up to 20
+console.log("2. Even numbers up to 20:");
+i = 2;
+while (i <= 20) {
+    console.log(i);
+    i += 2;
+}
+
+// 3. Sum numbers from 1 to 50
+console.log("3. Sum of numbers from 1 to 50:");
+i = 1;
+let sum = 0;
+while (i <= 50) {
+    sum += i;
+    i++;
+}
+console.log("Sum:", sum);
+
+// 4. Factorial of a number
+console.log("4. Factorial of 5:");
+let num = 5;
+let factorial = 1;
+i = 1;
+while (i <= num) {
+    factorial *= i;
+    i++;
+}
+console.log("Factorial of 5 is: " + factorial);
+
+// 5. Reverse a number
+console.log("5. Reverse number 12345:");
+num = 12345;
+let reversed = 0;
+while (num > 0) {
+    let digit = num % 10;
+    reversed = reversed * 10 + digit;
+    num = Math.floor(num / 10);
+}
+console.log("Reversed number:", reversed);
+
+
+// 6. Fibonacci series up to 60
+console.log("6. Fibonacci series up to 60:");
+let a = 0, b = 1;
+while (a <= 60) {
+    console.log(a);
+    let next = a + b;
+    a = b;
+    b = next;
+}
+
+
+// 7. Guessing game
+console.log("7. Guessing game (random guesses 1-10):");
+let secretNumber = 4;
+let guess = 0;
+while (guess !== secretNumber) {
+    guess = Math.floor(Math.random() * 10) + 1;
+    console.log("Guessing:", guess);
+}
+console.log("Found the secret number:", secretNumber);
+
+*do while statement
+// 1. Print numbers from 1 to 5
+let i = 1;
+do {
+    console.log("Number: " + i);
+    i++;
+} while (i <= 5);
+
+
+// 2. Sum of first 5 natural numbers
+let sum = 0;
+let j = 1;
+do {
+    sum += j;
+    j++;
+} while (j <= 5);
+console.log("Sum of first 5 numbers: " + sum);
+
+// 3. Print even numbers from 2 to 10
+let k = 2;
+do {
+    console.log("Even: " + k);
+    k += 2;
+} while (k <= 10);
+
+// 4. Factorial of 5
+let n = 5;
+let factorial = 1;
+let l = 1;
+do {
+    factorial *= l;
+    l++;
+} while (l <= n);
+console.log("Factorial of 5: " + factorial);
+
+// 5. Print characters of a string
+let str = "Hello";
+let m = 0;
+do {
+    console.log(str[m]);
+    m++;
+} while (m < str.length);
+
+// 6. Countdown from 5 to 1
+let p = 5;
+do {
+    console.log("Countdown: " + p);
+    p--;
+} while (p > 0);
+
+// 7 .To print numbers from 1 to 5
+let i = 1;
+do {
+    console.log(i);
+    i++;
+} while (i <= 5);
+
+
+
+
