@@ -1,0 +1,722 @@
+**Assignment questions:( 1)**
+1)Difference between HTTP and HTTPS.
+HTTP (HyperText Transfer Protocol) is an application-layer protocol used for transferring hypertext (HTML) and other resources over the web. It operates over port 80 and sends data in plain text, making it vulnerable to interception and tampering. HTTP is stateless, meaning each request is independent and does not retain session information without additional mechanisms like cookies or sessions.
+
+HTTPS (HyperText Transfer Protocol Secure) is the secure version of HTTP. It uses TLS/SSL encryption to protect data in transit, ensuring confidentiality, integrity, and authentication. HTTPS operates over port 443 and is essential for sensitive transactions like online banking, e-commerce, and login forms.
+
+
+2)Define web architecture.
+Web architecture refers to the overall structure of a website or web application, including the way it is designed, implemented, and deployed. It involves the use of technologies and protocols such as HTML, CSS, JavaScript, and HTTP to build and deliver web pages and applications to users.
+
+Web architecture consists of several components, including the client, the server, the network, and the database. The client is the web browser or application that the user interacts with, and the server is the computer or group of computers that host the website or web application. The network is the infrastructure that connects the client and the server, such as the internet. The database is a collection of data that is used to store and retrieve information for the website or web application.
+
+3)Difference between ARIA and WA ARIA.
+ARIA
+is a way to add extra information to a website,so that screen readers can understand buttons,menus and forms properly
+ 
+WAI-ARIA
+Is the rule book that tells how and when ARIA should be used to wake website easy to use for disabled people
+
+
+ IN A SHORT WAY
+
+ARIA is a tool
+WAI-ARIA is rules for using the tool
+
+
+4)Create portfolio.
+
+5)Behind the screen how web works.
+1️⃣ You type a URL
+Example: https://www.example.com
+Your browser breaks it into parts:
+•	Protocol: https
+•	Domain: www.example.com
+•	Path: /
+________________________________________
+2️⃣ DNS lookup (finding the server)
+Your browser asks:
+“What is the IP address for www.example.com?”
+Steps:
+1.	Browser cache
+2.	OS cache
+3.	Router cache
+4.	DNS resolver (ISP / public DNS)
+5.	Root → TLD → Authoritative DNS servers
+➡️ Returns an IP address
+________________________________________
+3️⃣ Connection is made
+•	Browser opens a TCP connection
+•	If HTTPS → TLS handshake happens (encryption + identity check)
+Now the connection is secure 🔒
+________________________________________
+4️⃣ HTTP request sent
+Browser sends a request like:
+GET / HTTP/1.1
+Host: www.example.com
+This request travels across the internet (often via a CDN).
+________________________________________
+5️⃣ Server processes the request
+On the server:
+•	Web server (Nginx / Apache)
+•	Application code (Node, Python, Java, PHP)
+•	Database queries (if needed)
+Server builds a response.
+________________________________________
+6️⃣ HTTP response returned
+Server sends back:
+•	Status code (200, 404, 500…)
+•	Headers
+•	HTML, CSS, JS, images
+________________________________________
+7️⃣ Browser renders the page
+The browser:
+1.	Parses HTML → builds DOM
+2.	Loads CSS → builds CSSOM
+3.	Executes JavaScript
+4.	Combines them → Render Tree
+5.	Layout → Paint → Display pixels 🖥️
+________________________________________
+8️⃣ Page becomes interactive
+•	JavaScript listens for clicks, typing, scrolling
+•	More requests may happen (APIs, images, fonts)
+________________________________________
+9️⃣ Caching & optimization (ongoing)
+•	Browser caches files
+•	CDN serves static assets
+•	Background requests keep data fresh
+________________________________________
+One-sentence summary
+The web works by translating a URL to an IP (DNS), securely requesting content (HTTP/HTTPS), processing it on servers, and rendering it in your browser.
+
+6)Define DNS
+
+DNS (Domain Name System) is the system that translates human-readable domain names into IP addresses that computers use to find each other on the internet.
+Simple explanation
+When you type www.example.com, DNS finds the corresponding IP address (like 93.184.216.34) so your browser knows where to connect.
+What DNS does
+•	🔤 Converts domain names → IP addresses
+•	⚡ Makes internet navigation fast using caching
+•	🌐 Acts like the internet’s phonebook
+One-liner definition
+DNS is a naming system that maps domain names to IP addresses so devices can locate servers on the internet.
+Example
+•	You type: google.com
+•	DNS returns: Google’s IP address
+•	Your browser connects to that server
+7) How arithmetic operators and concatenation work in browser
+
+*Arithmetic operators and concatenation in a browser* work mainly through scripting languages like JavaScript, which the browser uses to process calculations and text.
+
+*Arithmetic operators* such as +, -, *, /, and % are used to perform mathematical calculations on numeric values. For example, the browser can add, subtract, multiply, or divide numbers to calculate totals, scores, or prices dynamically on a web page.
+
+*Concatenation* is used to join strings (text) together. In the browser, the + operator is also used for concatenation. When + is applied to strings, or a string and a number, the browser converts the number into text and combines them. For example, "Total: " + 50 becomes "Total: 50". This allows browsers to display dynamic messages by combining text and values.
+
+8) explain event key mouse, add event keys property
+🔹 What is an Event?
+An event is an action performed by the user or browser:
+•	Key press ⌨️
+•	Mouse click 🖱️
+•	Page load
+•	Form submit
+JavaScript listens for these using event listeners.
+________________________________________
+🔹 Adding Event Listeners (basic syntax)
+element.addEventListener("eventName", function(event) {
+  // handle event
+});
+event (or e) is the event object — it contains details about what happened.
+________________________________________
+⌨️ Keyboard Events
+Common keyboard events
+Event	When it fires
+keydown	Key is pressed (fires continuously)
+keyup	Key is released
+keypress	(deprecated ❌)
+Example
+document.addEventListener("keydown", e => {
+  console.log(e.key);
+});
+________________________________________
+🔑 Keyboard Event Properties
+Property	Description	Example
+key	Actual key pressed	"a", "Enter"
+code	Physical key on keyboard	"KeyA", "Space"
+keyCode	Old numeric code (deprecated)	13
+altKey	Alt pressed?	true / false
+ctrlKey	Ctrl pressed?	true / false
+shiftKey	Shift pressed?	true / false
+metaKey	Cmd (Mac) / Win key	true / false
+Example
+document.addEventListener("keydown", e => {
+  if (e.ctrlKey && e.key === "s") {
+    e.preventDefault();
+    console.log("Save shortcut");
+  }
+});
+________________________________________
+🖱️ Mouse Events
+Common mouse events
+Event	Description
+click	Mouse click
+dblclick	Double click
+mousedown	Button pressed
+mouseup	Button released
+mousemove	Mouse moves
+mouseover	Enters element
+mouseout	Leaves element
+mouseenter	Enters (no bubbling)
+mouseleave	Leaves (no bubbling)
+contextmenu	Right click
+________________________________________
+🧭 Mouse Event Properties
+Property	Description
+clientX, clientY	Position in viewport
+pageX, pageY	Position in page
+screenX, screenY	Screen coordinates
+button	Which mouse button
+buttons	Buttons pressed
+target	Element clicked
+currentTarget	Element listener attached to
+Example
+document.addEventListener("click", e => {
+  console.log(e.clientX, e.clientY);
+});
+________________________________________
+🖱️ Mouse button values
+0 → Left click
+1 → Middle click
+2 → Right click
+________________________________________
+🔹 Preventing Default Behavior
+link.addEventListener("click", e => {
+  e.preventDefault();
+});
+________________________________________
+🔹 Event Bubbling & Capturing
+element.addEventListener("click", handler, true); // capturing
+element.addEventListener("click", handler);       // bubbling (default)
+________________________________________
+🔹 Event Delegation (important!)
+ul.addEventListener("click", e => {
+  if (e.target.tagName === "LI") {
+    console.log(e.target.textContent);
+  }
+});
+________________________________________
+🔹 Combined Keyboard + Mouse Example
+document.addEventListener("keydown", e => {
+  console.log("Key:", e.key);
+});
+
+document.addEventListener("mousemove", e => {
+  console.log("Mouse:", e.clientX, e.clientY);
+});
+________________________________________
+⚠️ Common Mistakes
+❌ Using keypress
+❌ Using keyCode in new code
+❌ Forgetting preventDefault()
+❌ Confusing target vs currentTarget
+________________________________________
+🔑 One-line summary
+Keyboard and mouse events let JavaScript react to user actions, and the event object provides detailed properties like key pressed, mouse position, and modifier keys.
+________________________________________
+If you want next:
+•	🎯 Interview questions
+•	🧪 Practice exercises
+•	🕹️ Keyboard-controlled game
+•	⚛️ React event handling comparison
+Just say the word 😄
+
+9)Explore npm and npx
+npm is a package manager for installing and managing Node.js dependencies, while npx is a tool for executing Node.js packages directly without needing a global installation. In short: npm installs, npx runs.
+npm (Node Package Manager)
+•	Introduced in 2010, developed by Isaac Z. Schlueter.
+•	Comes bundled with Node.js installation.
+•	Manages local and global dependencies.
+•	Provides commands like:
+o	npm install <package> → installs a package locally.
+o	npm install -g <package> → installs globally.
+o	npm run <script> → runs scripts defined in package.json.
+⚡ npx (Node Package Execute)
+•	Introduced with npm v5.2.0 (2017).
+•	Allows execution of packages without installing them globally.
+•	Useful for one-time commands or project generators.
+•	Examples:
+o	npx create-react-app my-app → scaffolds a React project.
+o	npx eslint . → runs ESLint without global install.
+•	Helps avoid version conflicts by running the exact package version specified in the project.
+✅ When to Use Each
+•	Use npm when you want to add dependencies to your project and manage them long-term.
+•	Use npx when you want to execute a package immediately without cluttering your global environment.
+ Risks & Considerations
+•	npm: Installing too many global packages can cause version conflicts.
+•	npx: Each execution may download packages temporarily, which can be slower if repeated often.
+•	Best practice: Use npm for project dependencies, npx for one-off executions or generators.
+
+10)Define CDN
+A CDN (Content Delivery Network) is a system of distributed servers around the world that deliver web content to users faster and more reliably.
+In plain terms: instead of everyone hitting one central server, a CDN serves content from the server closest to the user, reducing load time and strain.
+What CDNs do
+•	 Speed up websites (lower latency)
+•	 Reduce distance between user and data
+•	 Improve reliability & security (DDoS protection, redundancy)
+•	 Lower bandwidth costs for the main server
+Common content served by CDNs
+•	Images, videos, audio
+•	CSS & JavaScript files
+•	Web pages and APIs
+•	Software downloads
+Popular CDN examples
+•	Cloudflare
+•	Akamai
+•	Fastly
+•	Amazon CloudFront
+One-liner definition:
+A CDN is a global network of servers that delivers content to users from the nearest location for faster and more reliable performance.
+
+11)Explain what is the smallest js file which you can execute in web 
+The smallest executable JavaScript file for the web is a single semicolon (;), which is syntactically valid and runs without errors in any browser's JS engine.
+Why It Works
+Browsers parse JS during the rendering process (as discussed earlier); an empty statement (;) executes instantly with no output or side effects.
+File size: 1 byte (UTF-8 encoded)—nothing smaller produces valid JS without syntax errors.Minimal Examples
+; – Does nothing (smallest).
+1; – Evaluates number literal (2 bytes).[ from rendering context]
+alert() – Shows dialog (7 bytes, but requires browser popup allowance).Save as minimal.js, load via <script src="minimal.js"></script> or browser console—parses perfectly during Critical Rendering Path.
+
+12) create an array in all the ways, work them throw all the loops.
+all ways to create arrays in JavaScript + how to loop through them using all common loops.
+✅ Ways to Create Arrays
+1️⃣ Array literal (most common)
+const a1 = [1, 2, 3];
+
+2️⃣ Array constructor
+const a2 = new Array(1, 2, 3);
+const a3 = new Array(5); // length = 5 (empty slots)
+
+3️⃣ Array.of()
+const a4 = Array.of(1, 2, 3);
+
+4️⃣ Array.from()
+const a5 = Array.from("abc"); // ['a','b','c']
+
+5️⃣ Using spread operator
+const a6 = [...a1];
+
+6️⃣ Empty array
+const a7 = [];
+
+🔁 Looping Through Arrays
+Assume:
+const arr = [10, 20, 30];
+
+1️⃣ for loop
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+}
+
+2️⃣ for...of (values)
+for (const value of arr) {
+  console.log(value);
+}
+
+3️⃣ for...in (indexes)
+for (const index in arr) {
+  console.log(arr[index]);}
+4️⃣ forEach()
+arr.forEach((value, index) => {
+  console.log(index, value);
+});
+
+5️⃣ while loop
+let i = 0;
+while (i < arr.length) {
+  console.log(arr[i]);
+  i++;
+}
+
+6️⃣ do...while loop
+let i = 0;
+do {
+  console.log(arr[i]);
+  i++;
+} while (i < arr.length);
+
+7️⃣ map() (returns new array)
+const doubled = arr.map(x => x * 2);
+
+8️⃣ forEach vs map (important)
+•	forEach → side effects
+•	map → transforms array
+
+🔑 One-line Summary
+JavaScript arrays can be created using literals, constructors, and helper methods, and iterated using traditional loops, modern loops, and array methods.
+
+
+13)Go through the architecture works in JS
+1️⃣ JavaScript at a high level
+JavaScript architecture usually means how JS code is organized and executed, from runtime behavior to app structure.
+There are two big layers to think about:
+1.	JavaScript runtime architecture (how JS runs)
+2.	Application architecture (how JS apps are structured)
+
+2️⃣ JavaScript Runtime Architecture (how JS actually runs)
+ Core components
+1. Call Stack
+•	Executes JS code line by line
+•	Single-threaded (one thing at a time)
+function a() {
+  b();
+}
+function b() {
+  console.log("Hi");
+}
+a();
+Stack flow: a → b → console.log
+
+2. Heap
+•	Memory storage for objects and variables
+let user = { name: "Alex" };
+
+3. Web APIs (Browser / Node)
+JS itself can’t do async things like:
+•	setTimeout
+•	HTTP requests (fetch)
+•	DOM events
+These are handled by Web APIs, not the JS engine.
+
+4. Callback Queue / Task Queue
+•	Stores callbacks waiting to run
+•	Example: setTimeout
+
+5. Microtask Queue
+•	Higher priority than callback queue
+•	Used by:
+o	Promise.then
+o	async/await
+
+6. Event Loop
+The boss
+It:
+1.	Checks if the call stack is empty
+2.	Runs microtasks first
+3.	Then runs callback queue tasks
+console.log("A");
+
+setTimeout(() => console.log("B"), 0);
+
+Promise.resolve().then(() => console.log("C"));
+
+console.log("D");
+Output:
+A
+D
+C
+B
+
+3️⃣ JavaScript Application Architecture (how apps are structured)
+🧱 Common architectural style
+1. Modular Architecture
+Split code into files/modules
+// math.js
+export function add(a, b) {
+  return a + b;
+}
+// app.js
+import { add } from "./math.js";
+✔ Reusable
+✔ Maintainable
+
+2. MVC (Model–View–Controller)
+Common in older JS apps
+•	Model → data
+•	View → UI
+•	Controller → logic
+
+3. Component-Based Architecture (Modern JS)
+Used in:
+•	React
+•	Vue
+•	Angular
+Each component:
+•	Has its own logic
+•	Manages its own state
+•	Renders UI
+function Button() {
+  return <button>Click me</button>;
+}
+
+4. Layered Architecture (Backend JS / Node.js)
+Typical backend structure:
+controllers/
+services/
+repositories/
+routes/
+Flow:
+Request → Route → Controller → Service → DB
+4️⃣ Frontend vs Backend JS Architecture
+🌐 Frontend
+•	UI components
+•	State management (Redux, Zustand, Context)
+•	API calls
+•	Routing
+🖥 Backend (Node.js)
+•	REST / GraphQL APIs
+•	Authentication
+•	Database access
+•	Middleware
+
+5️⃣ Clean Architecture (Advanced but powerful)
+Used in serious projects:
+•	Business logic independent of framework
+•	Easy testing
+•	Scales well
+Layers:
+Entities
+Use Cases
+Interface Adapters
+Frameworks (React, Express)
+
+6️⃣ TL;DR
+•	JS is single-threaded
+•	Async handled via event loop
+•	Apps are structured using modules, components, and layers
+•	Frontend ≠ Backend architecture, but same language
+
+14) How does asynchronization works in JS
+
+JavaScript is single-threaded, so async work is handled by delegating tasks, then resuming them later using the event loop.
+
+1️⃣ Why JS needs async at all
+If JS were only synchronous:
+while (true) {}
+👉 Browser freezes. No clicks. No UI. Dead.
+Async lets JS:
+•	Wait for timers
+•	Handle network requests
+•	React to user events
+without blocking the main thread
+
+2️⃣ The main players (memorize these)
+Call Stack
+•	Runs synchronous code
+•	One function at a time
+
+
+🌐 Web APIs (or Node APIs)
+Handle async tasks:
+•	setTimeout
+•	fetch
+•	DOM events
+•	File system (Node)
+JS hands off async work here.
+
+📬 Queues
+There are two queues:
+1. Microtask Queue (HIGH priority)
+•	Promise.then
+•	catch
+•	finally
+•	async/await
+2. Callback / Task Queue (LOW priority)
+•	setTimeout
+•	setInterval
+•	DOM events
+
+🔁 Event Loop
+The coordinator:
+1.	Waits until call stack is empty
+2.	Executes all microtasks
+3.	Executes one task from callback queue
+4.	Repeats forever
+
+3️⃣ Step-by-step example (IMPORTANT)
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Timeout");
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("Promise");
+});
+
+console.log("End");
+Execution order:
+1. Call stack
+Start
+End
+2. Web APIs
+•	setTimeout registered
+•	Promise resolved
+3. Queues
+•	Microtask queue → Promise
+•	Callback queue → setTimeout
+4. Event loop
+Microtasks first, then callbacks
+✅ Output:
+Start
+End
+Promise
+Timeout
+
+4️⃣ async / await (syntactic sugar )
+async function fetchData() {
+  console.log("A");
+
+  await fetch(url);
+  console.log("B");
+}
+What actually happens:
+•	fetch() runs async
+•	Function pauses
+•	Rest of the function is placed in microtask queue
+•	Call stack is freed
+So this:
+await something();
+≈
+something().then(() => {
+  // continue execution
+});
+
+5️⃣ Real-world async flow (fetch example)
+fetch("/api/user")
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+Flow:
+1.	Request sent via Web API
+2.	JS continues running
+3.	Response arrives
+4.	Promise resolves
+5.	.then() runs via microtask queue
+
+6️⃣ Common async traps 
+❌ Blocking the event loop
+while (true) {} // freezes everything
+
+❌ Thinking setTimeout(fn, 0) runs immediately
+It doesn’t. It runs after:
+•	Current stack
+•	All microtasks
+
+❌ Forgetting await
+const data = fetch(url); // Promise, not data
+7️⃣ Mental model (remember this)
+Think of JS as:
+“I’ll start the async job, and call you back when it’s done.”
+JS never waits.
+It just continues and revisits later.
+8️⃣ TL;DR
+•	JS is single-threaded
+•	Async work is handled by Web/Node APIs
+•	Promises go to microtask queue
+•	Timers/events go to callback queue
+•	Event loop decides execution order
+
+15) identify the difference between spread operator and rest operator along with the use case
+
+🔹 Core difference (one line)
+•	Spread operator → expands values
+•	Rest operator → collects values
+Same syntax. Different jobs.
+
+1️⃣ Spread Operator (...) — EXPAND
+What it does
+Takes an iterable (array, object, string) and spreads it out into individual values.
+
+📌 Use cases for Spread
+✅ Copy arrays or objects (no mutation)
+const arr = [1, 2, 3];
+const copy = [...arr];
+const user = { name: "Sam" };
+const clone = { ...user };
+
+✅ Merge arrays
+const a = [1, 2];
+const b = [3, 4];
+
+const merged = [...a, ...b];
+
+✅ Merge objects
+const defaults = { theme: "dark" };
+const settings = { fontSize: 16 };
+
+const config = { ...defaults, ...settings };
+Later properties override earlier ones.
+
+✅ Pass arguments to a function
+const nums = [5, 10];
+
+Math.max(...nums); // 10
+
+✅ Convert string to array
+[..."hello"]; // ['h','e','l','l','o']
+
+2️⃣ Rest Operator (...) — COLLECT
+What it does
+Collects multiple values into a single array or object.
+
+
+📌 Use cases for Rest
+✅ Function parameters (variable arguments)
+function sum(...numbers) {
+  return numbers.reduce((a, b) => a + b, 0);
+}
+
+sum(1, 2, 3, 4);
+
+✅ Destructuring arrays
+const [first, ...rest] = [10, 20, 30, 40];
+
+first; // 10
+rest;  // [20, 30, 40]
+
+✅ Destructuring objects
+const user = { name: "Alex", age: 25, city: "NY" };
+
+const { name, ...details } = user;
+
+details; // { age: 25, city: "NY" }
+
+3️⃣ Side-by-side comparison
+Feature	Spread Operator	Rest Operator
+Purpose	Expand values	Collect values
+Used in	Function calls, arrays, objects	Function params, destructuring
+Output	Individual elements	Array / object
+Direction	One → many	Many → one
+
+
+
+4️⃣ Key rule to remember 🧠
+If ... is on the RIGHT side → Spread
+If ... is on the LEFT side → Rest
+Examples:
+fn(...arr);     // spread
+function fn(...args) {} // rest
+
+5️⃣ Real-world example (combined)
+function createUser(id, ...roles) {
+  return {
+    id,
+    roles: [...roles] // rest → spread
+  };
+}
+
+createUser(1, "admin", "editor");
+
+6️⃣ Common mistakes ❌
+•	❌ Using rest outside function params or destructuring
+•	❌ Expecting spread to deep-copy objects (it’s shallow)
+________________________________________
+7️⃣ TL;DR
+•	Same syntax ...
+•	Spread = expand
+•	Rest = collect
+•	Context decides behavior
+
+
+
+
+
